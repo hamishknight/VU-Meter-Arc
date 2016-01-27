@@ -18,7 +18,6 @@ static inline void drawGraduation(CGPoint center, CGFloat radius, CGFloat angle,
     
     CGContextMoveToPoint(c, p1.x, p1.y);
     CGContextAddLineToPoint(c, p2.x, p2.y);
-    CGContextClosePath(c);
     
     CGContextSetStrokeColorWithColor(c, color);
     CGContextSetLineWidth(c, width);
