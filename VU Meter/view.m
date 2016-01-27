@@ -55,7 +55,7 @@ static inline void drawGraduation(CGPoint center, CGFloat radius, CGFloat angle,
     
     for (int i = 0; i <= numberOfGraduations; i++) {
         if (i % 5 == 0) {
-            drawGraduation(center, radius, startArc+(i*deltaArc), 14, 1.5, [UIColor redColor].CGColor);
+            drawGraduation(center, radius, startArc+(i*deltaArc), 14, 1.5, [UIColor redColor].CGColor); // red graduation every 5 graduations.
         } else {
             drawGraduation(center, radius, startArc+(i*deltaArc), 10, 1, [UIColor blackColor].CGColor);
         }
