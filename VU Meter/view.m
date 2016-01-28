@@ -41,7 +41,7 @@ static inline void drawGraduation(CGPoint center, CGFloat radius, CGFloat angle,
     CGFloat startAngle = -M_PI*0.2; // start angle of the main arc
     CGFloat endAngle = -M_PI*0.8; // end angle of the main arc
     
-    NSUInteger numberOfGraduations = 15;
+    NSUInteger numberOfGraduations = 16;
     CGPoint center = (CGPoint){r.size.width*0.5, r.size.height*0.5}; // center of arc
     CGFloat radius = (r.size.width*0.5)-20; // radius of arc
     
@@ -49,10 +49,10 @@ static inline void drawGraduation(CGPoint center, CGFloat radius, CGFloat angle,
     CGFloat maxGraduationWidthAngle = maxGraduationWidth/radius; // the maximum graduation width angle (used to prevent the graduations from being stroked outside of the main arc)
     
     // draw graduations
-    CGFloat deltaArc = (endAngle-startAngle+maxGraduationWidthAngle)/numberOfGraduations; // the change in angle of the arc
+    CGFloat deltaArc = (endAngle-startAngle+maxGraduationWidthAngle)/(numberOfGraduations-1); // the change in angle of the arc
     CGFloat startArc = startAngle-(maxGraduationWidthAngle*0.5); // the starting angle of the arc
     
-    for (int i = 0; i <= numberOfGraduations; i++) {
+    for (int i = 0; i < numberOfGraduations; i++) {
         if (i % 5 == 0) {
             drawGraduation(center, radius, startArc+(i*deltaArc), 14, 1.5, [UIColor redColor].CGColor); // red graduation every 5 graduations.
         } else {
